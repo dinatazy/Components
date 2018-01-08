@@ -48,8 +48,8 @@ const ListItem = props => {
                             />
                             : null}
                         <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
-                            <Text style={[styles.title, titleStyle]}>{title}</Text>
-                            <Text style={styles.subtitle}>{subtitle}</Text>
+                            <Text numberOfLines={1} style={[styles.title, titleStyle]}>{title}</Text>
+                            <Text numberOfLines={1} style={styles.subtitle}>{subtitle}</Text>
                         </View>
                     </View>
                     <View style={styles.rightContainer}>
@@ -59,7 +59,7 @@ const ListItem = props => {
                             color={rightIcon.color || 'black'}
                         >
                         </Icon>
-                        <Text style={[styles.rightSubtitle, rightSubtitleStyle]}>
+                        <Text numberOfLines={1} style={[styles.rightSubtitle, rightSubtitleStyle]}>
                             {rightSubtitle}
                         </Text>
                     </View>

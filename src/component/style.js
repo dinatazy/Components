@@ -10,55 +10,58 @@ export const styles = StyleSheet.create({
     container: {
         width: width,
         height: 80,
-        borderBottomWidth:0.3,
-        borderColor:'grey',
-       // backgroundColor:'green'
+        borderBottomWidth: 0.3,
+        borderColor: 'grey',
+        // backgroundColor:'green'
     },
 
-    content:{
-        flexDirection:'row',
-        justifyContent:'flex-end',
+    content: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     },
 
-    leftContainer:{
-        flex:1,
-        flexDirection:'row',
-        margin:12,
+    leftContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        margin: 12,
     },
 
-    leftImage:{
-        width:52,
-        height:52,
-        borderRadius:2, 
+    leftImage: {
+        width: 52,
+        height: 52,
+        borderRadius: 2,
     },
 
-    titleContainer:{
-        paddingLeft:10,
-        justifyContent:'center',
+    titleContainer: {
+        paddingLeft: 10,
+        justifyContent: 'center',
     },
 
-    titleAndSubtitleContainer:{
-        paddingLeft:10,
-        justifyContent:'space-between',
+    titleAndSubtitleContainer: {
+        paddingLeft: 10,
+        justifyContent: 'space-between',
     },
 
-    title:{
-        fontSize:20,
-        fontWeight:'bold',
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        width: 250,
     },
 
-    subtitle:{
-       fontSize:15,
-        color:'grey'
+    subtitle: {
+        fontSize: 15,
+        color: 'grey',
+        width: 190,
     },
 
-    rightContainer:{
-       margin:10,
-       alignItems:'flex-end',
-       justifyContent:'flex-end',
+    rightContainer: {
+        margin: 10,
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
     },
 
-    rightSubtitle:{
-        color:'grey'
+    rightSubtitle: {
+        color: 'grey',
+        width: 100,
     }
 })

@@ -26,7 +26,7 @@ export default class App extends Component<{}> {
     return (
       <View style={styles.container}>
         <ListItem
-          title='Dummy Title...'
+          title='Dummy Title'
           titleStyle={{ color: 'green', fontWeight: 'normal' }}
           subtitle='Arbeitsplatz'
           subtitleStyle={{}}
