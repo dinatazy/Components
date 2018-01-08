@@ -26,7 +26,11 @@ export default class App extends Component<{}> {
     return (
       <View style={styles.container}>
         <ListItem
-        
+          title='Dummy Title...'
+          subtitle='Arbeitsplatz'
+          leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
+          rightIcon='angle-right'
+          rightSubtitle='10 November'
         />
       </View>
     );
