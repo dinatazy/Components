@@ -9,48 +9,68 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  FlatList,
 } from 'react-native';
 
 import ListItem from './src/component/listItem'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const list = [
+  {
+    title: 'Dummy Title',
+    titleStyle: { fontWeight: 'normal' },
+    subtitle: 'Arbeitsplatz',
+    subtitleStyle: {},
+    leftImage: { uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' },
+    rightIcon: { name: 'angle-right', color: 'black', type: 'font-awesome' },
+    rightSubtitle: '10 November',
+    rightSubtitleStyle: {},
+  },
+  {
+    title: 'Dummy Title',
+    titleStyle: { color: 'white', fontWeight: 'bold' },
+    subtitle: 'Arbeitsplatz',
+    subtitleStyle: { color: 'white' },
+    rightIcon: { name: 'star-o', color: 'white', size: 30, type: 'font-awesome' },
+    backgroundImage: { uri: 'https://static.pexels.com/photos/531880/pexels-photo-531880.jpeg' },
+  },
+
+]
 
 export default class App extends Component<{}> {
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+
+    }
+  }
+
+  _renderItem = ({ item }) => (
+
+    <ListItem
+      title={item.title}
+      titleStyle={item.titleStyle}
+      subtitle={item.subtitle}
+      subtitleStyle={item.subtitleStyle}
+      leftImage={item.leftImage}
+      rightIcon={item.rightIcon}
+      rightSubtitle={item.rightSubtitle}
+      rightSubtitleStyle={item.rightSubtitleStyle}
+      backgroundImage={item.backgroundImage}
+      onPress={() => console.log('im clicked')}
+    />
+
+  );
+
   render() {
     return (
-      <View style={styles.container}>
-        <ListItem
-          title='Dummy Title'
-          titleStyle={{ fontWeight: 'normal' }}
-          subtitle='Arbeitsplatz'
-          subtitleStyle={{}}
-          leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
-          rightIcon={{ name: 'angle-right', color: 'black', size: 25, type: 'font-awesome' }}
-          rightSubtitle='10 November'
-          rightSubtitleStyle={{}}
-          onPress={() => console.log('im clicked')}
-        />
-        <ListItem
-          title='Dummy Title'
-          titleStyle={{ color: 'white', fontWeight: 'bold' }}
-          subtitle='Arbeitsplatz'
-          subtitleStyle={{ color: 'white' }}
-          //leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
-          rightIcon={{ name: 'star-o', color: 'white', size: 30, type: 'font-awesome' }}
-          //rightSubtitle='10 November'
-          rightSubtitleStyle={{ color: 'white' }}
-          backgroundImage={{ uri: 'https://static.pexels.com/photos/531880/pexels-photo-531880.jpeg' }}
-          backgroundImageStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
-          onPress={() => console.log('im clicked')}
-        />
-
-      </View>
+      <FlatList
+        data={list}
+        renderItem={this._renderItem}
+        extraData={this.state}
+        contentContainerStyle={styles.container}
+      />
     );
   }
 }
@@ -58,18 +78,9 @@ export default class App extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    marginTop:60,
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
