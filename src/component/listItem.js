@@ -25,6 +25,7 @@ const ListItem = props => {
         subtitleStyle,
         backgroundImage,
         backgroundImageStyle,
+        isBackgroundMask,
         ...attributes
     } = props;
 
@@ -51,32 +52,36 @@ const ListItem = props => {
                 style={[styles.imageBackground, backgroundImageStyle]}
                 source={backgroundImage}
             >
-                <View style={styles.leftImageContainer}>
-                    <View style={styles.content}>
-                        <View style={styles.leftContainer}>
-                            {leftImage ?
-                                <Image
-                                    style={styles.leftImage}
-                                    source={leftImage}
-                                />
-                                : null}
-                            <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
-                                <Text numberOfLines={1} style={[styles.title, titleStyle]}>{title}</Text>
-                                <Text numberOfLines={1} style={styles.subtitle}>{subtitle}</Text>
+                <View
+                    style={[styles.imageBackground, isBackgroundMask ? styles.imageBackgroundMask : null]}
+                >
+                    <View style={styles.leftImageContainer}>
+                        <View style={styles.content}>
+                            <View style={styles.leftContainer}>
+                                {leftImage ?
+                                    <Image
+                                        style={styles.leftImage}
+                                        source={leftImage}
+                                    />
+                                    : null}
+                                <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
+                                    <Text numberOfLines={1} style={[styles.title, titleStyle]}>{title}</Text>
+                                    <Text numberOfLines={1} style={[styles.subtitle, subtitleStyle]}>{subtitle}</Text>
+                                </View>
                             </View>
-                        </View>
-                        <View style={styles.rightContainer}>
-                            {rightIcon ?
-                                <Icon
-                                    name={rightIcon.name}
-                                    size={rightIcon.size || 30}
-                                    color={rightIcon.color || 'black'}
-                                >
-                                </Icon>
-                                : null}
-                            <Text numberOfLines={1} style={[styles.rightSubtitle, rightSubtitleStyle]}>
-                                {rightSubtitle}
-                            </Text>
+                            <View style={styles.rightContainer}>
+                                {rightIcon ?
+                                    <Icon
+                                        name={rightIcon.name}
+                                        size={rightIcon.size || 30}
+                                        color={rightIcon.color || 'black'}
+                                    >
+                                    </Icon>
+                                    : null}
+                                <Text numberOfLines={1} style={[styles.rightSubtitle, rightSubtitleStyle]}>
+                                    {rightSubtitle}
+                                </Text>
+                            </View>
                         </View>
                     </View>
                 </View>

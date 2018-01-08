@@ -12,11 +12,17 @@ export const styles = StyleSheet.create({
         height: 70,
         borderBottomWidth: 0.3,
         borderColor: 'grey',
-        marginBottom: 5,
+        paddingBottom: 5,
     },
 
     imageBackground: {
-        width: width
+        width: width,
+        height: 70,
+    },
+
+    imageBackgroundMask: {
+        zIndex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
     },
 
     content: {

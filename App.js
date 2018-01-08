@@ -25,14 +25,16 @@ const list = [
     rightIcon: { name: 'angle-right', color: 'black', type: 'font-awesome' },
     rightSubtitle: '10 November',
     rightSubtitleStyle: {},
+    onPress: () => { console.log('first item') }
   },
   {
     title: 'Dummy Title',
     titleStyle: { color: 'white', fontWeight: 'bold' },
     subtitle: 'Arbeitsplatz',
     subtitleStyle: { color: 'white' },
-    rightIcon: { name: 'star-o', color: 'white', size: 30, type: 'font-awesome' },
+    rightIcon: { name: 'star-o', color: 'white', size: 35, type: 'font-awesome' },
     backgroundImage: { uri: 'https://static.pexels.com/photos/531880/pexels-photo-531880.jpeg' },
+    isBackgroundMask: true,
   },
 
 ]
@@ -58,7 +60,7 @@ export default class App extends Component<{}> {
       rightSubtitle={item.rightSubtitle}
       rightSubtitleStyle={item.rightSubtitleStyle}
       backgroundImage={item.backgroundImage}
-      onPress={() => console.log('im clicked')}
+      onPress={item.onPress}
     />
 
   );
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    marginTop:60,
+    marginTop: 60,
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
