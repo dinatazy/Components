@@ -8,7 +8,8 @@ import {
     TouchableHighlight
 } from 'react-native'
 import { styles } from './style'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import getIconType from '../helpers/getIconType';
+
 
 const ListItem = props => {
     const {
@@ -17,7 +18,10 @@ const ListItem = props => {
         subtitle,
         rightIcon,
         rightSubtitle,
+        rightSubtitleStyle,
         onPress,
+        titleStyle,
+        subtitleStyle,
         ...attributes
     } = props;
 
@@ -25,6 +29,8 @@ const ListItem = props => {
     if (onPress) {
         Component = TouchableOpacity;
     }
+    let Icon;
+    Icon = getIconType(rightIcon.type)
     return (
 
         <Component
@@ -42,18 +48,18 @@ const ListItem = props => {
                             />
                             : null}
                         <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
-                            <Text style={styles.title}>{title}</Text>
+                            <Text style={[styles.title, titleStyle]}>{title}</Text>
                             <Text style={styles.subtitle}>{subtitle}</Text>
                         </View>
                     </View>
                     <View style={styles.rightContainer}>
                         <Icon
-                            name={rightIcon}
-                            size={30}
-                            color='black'
+                            name={rightIcon.name}
+                            size={rightIcon.size || 30}
+                            color={rightIcon.color || 'black'}
                         >
                         </Icon>
-                        <Text style={styles.rightSubtitle}>
+                        <Text style={[styles.rightSubtitle, rightSubtitleStyle]}>
                             {rightSubtitle}
                         </Text>
                     </View>
