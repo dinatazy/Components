@@ -30,7 +30,9 @@ const ListItem = props => {
         Component = TouchableOpacity;
     }
     let Icon;
-    Icon = getIconType(rightIcon.type)
+    if (rightIcon) {
+        Icon = getIconType(rightIcon.type)
+    }
     return (
 
         <Component
@@ -53,12 +55,14 @@ const ListItem = props => {
                         </View>
                     </View>
                     <View style={styles.rightContainer}>
-                        <Icon
-                            name={rightIcon.name}
-                            size={rightIcon.size || 30}
-                            color={rightIcon.color || 'black'}
-                        >
-                        </Icon>
+                        {rightIcon ?
+                            <Icon
+                                name={rightIcon.name}
+                                size={rightIcon.size || 30}
+                                color={rightIcon.color || 'black'}
+                            >
+                            </Icon>
+                            : null}
                         <Text numberOfLines={1} style={[styles.rightSubtitle, rightSubtitleStyle]}>
                             {rightSubtitle}
                         </Text>

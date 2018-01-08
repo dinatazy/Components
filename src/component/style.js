@@ -9,9 +9,10 @@ let { width, height } = Dimensions.get('window')
 export const styles = StyleSheet.create({
     container: {
         width: width,
-        height: 80,
+        height: 70,
         borderBottomWidth: 0.3,
         borderColor: 'grey',
+        marginBottom: 5,
         // backgroundColor:'green'
     },
 
@@ -23,13 +24,14 @@ export const styles = StyleSheet.create({
     leftContainer: {
         flex: 1,
         flexDirection: 'row',
-        margin: 12,
+        marginLeft: 10,
     },
 
     leftImage: {
         width: 52,
         height: 52,
         borderRadius: 2,
+        alignSelf: 'center'
     },
 
     titleContainer: {
@@ -39,10 +41,11 @@ export const styles = StyleSheet.create({
 
     titleAndSubtitleContainer: {
         paddingLeft: 10,
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
     },
 
     title: {
+        paddingTop: 5,
         fontSize: 20,
         fontWeight: 'bold',
         width: 250,
@@ -52,6 +55,7 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         color: 'grey',
         width: 190,
+        paddingTop: 5,
     },
 
     rightContainer: {

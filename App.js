@@ -36,6 +36,18 @@ export default class App extends Component<{}> {
           rightSubtitleStyle={{}}
           onPress={() => console.log('im clicked')}
         />
+        <ListItem
+          title='Dummy Title'
+          titleStyle={{ color: 'green', fontWeight: 'normal' }}
+          subtitle='Arbeitsplatz'
+          subtitleStyle={{}}
+          //leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
+          rightIcon={{ name: 'angle-right', color: 'black', size: 25, type: 'font-awesome' }}
+          //rightSubtitle='10 November'
+          rightSubtitleStyle={{}}
+          onPress={() => console.log('im clicked')}
+        />
+
       </View>
     );
   }
