@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         height: 80,
         borderBottomWidth:0.3,
         borderColor:'grey',
-        //backgroundColor:'green'
+       // backgroundColor:'green'
     },
 
     content:{
@@ -33,6 +33,11 @@ export const styles = StyleSheet.create({
     },
 
     titleContainer:{
+        paddingLeft:10,
+        justifyContent:'center',
+    },
+
+    titleAndSubtitleContainer:{
         paddingLeft:10,
         justifyContent:'space-between',
     },

@@ -31,6 +31,7 @@ export default class App extends Component<{}> {
           leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
           rightIcon='angle-right'
           rightSubtitle='10 November'
+          onPress={() => console.log('im clicked')}
         />
       </View>
     );

@@ -5,6 +5,7 @@ import {
     Text,
     TouchableOpacity,
     Image,
+    TouchableHighlight
 } from 'react-native'
 import { styles } from './style'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -16,19 +17,31 @@ const ListItem = props => {
         subtitle,
         rightIcon,
         rightSubtitle,
+        onPress,
+        ...attributes
     } = props;
 
+    let Component = View;
+    if (onPress) {
+        Component = TouchableOpacity;
+    }
     return (
 
-        <View style={styles.container} >
+        <Component
+            style={styles.container}
+            onPress={onPress}
+            {...attributes}
+        >
             <View style={styles.leftImageContainer}>
                 <View style={styles.content}>
                     <View style={styles.leftContainer}>
-                        <Image
-                            style={styles.leftImage}
-                            source={leftImage}
-                        />
-                        <View style={styles.titleContainer}>
+                        {leftImage ?
+                            <Image
+                                style={styles.leftImage}
+                                source={leftImage}
+                            />
+                            : null}
+                        <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
                             <Text style={styles.title}>{title}</Text>
                             <Text style={styles.subtitle}>{subtitle}</Text>
                         </View>
@@ -46,7 +59,7 @@ const ListItem = props => {
                     </View>
                 </View>
             </View>
-        </View>
+        </Component>
 
     )
 };
