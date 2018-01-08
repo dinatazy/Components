@@ -13,12 +13,16 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 0.3,
         borderColor: 'grey',
         marginBottom: 5,
-        // backgroundColor:'green'
+    },
+
+    imageBackground: {
+        width: width
     },
 
     content: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
+        backgroundColor: 'transparent'
     },
 
     leftContainer: {

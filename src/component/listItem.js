@@ -5,7 +5,8 @@ import {
     Text,
     TouchableOpacity,
     Image,
-    TouchableHighlight
+    TouchableHighlight,
+    ImageBackground
 } from 'react-native'
 import { styles } from './style'
 import getIconType from '../helpers/getIconType';
@@ -22,12 +23,18 @@ const ListItem = props => {
         onPress,
         titleStyle,
         subtitleStyle,
+        backgroundImage,
+        backgroundImageStyle,
         ...attributes
     } = props;
 
     let Component = View;
     if (onPress) {
         Component = TouchableOpacity;
+    }
+    let ComponentBackground = View;
+    if (backgroundImage) {
+        ComponentBackground = ImageBackground
     }
     let Icon;
     if (rightIcon) {
@@ -40,35 +47,40 @@ const ListItem = props => {
             onPress={onPress}
             {...attributes}
         >
-            <View style={styles.leftImageContainer}>
-                <View style={styles.content}>
-                    <View style={styles.leftContainer}>
-                        {leftImage ?
-                            <Image
-                                style={styles.leftImage}
-                                source={leftImage}
-                            />
-                            : null}
-                        <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
-                            <Text numberOfLines={1} style={[styles.title, titleStyle]}>{title}</Text>
-                            <Text numberOfLines={1} style={styles.subtitle}>{subtitle}</Text>
+            <ComponentBackground
+                style={[styles.imageBackground, backgroundImageStyle]}
+                source={backgroundImage}
+            >
+                <View style={styles.leftImageContainer}>
+                    <View style={styles.content}>
+                        <View style={styles.leftContainer}>
+                            {leftImage ?
+                                <Image
+                                    style={styles.leftImage}
+                                    source={leftImage}
+                                />
+                                : null}
+                            <View style={subtitle ? styles.titleAndSubtitleContainer : styles.titleContainer}>
+                                <Text numberOfLines={1} style={[styles.title, titleStyle]}>{title}</Text>
+                                <Text numberOfLines={1} style={styles.subtitle}>{subtitle}</Text>
+                            </View>
+                        </View>
+                        <View style={styles.rightContainer}>
+                            {rightIcon ?
+                                <Icon
+                                    name={rightIcon.name}
+                                    size={rightIcon.size || 30}
+                                    color={rightIcon.color || 'black'}
+                                >
+                                </Icon>
+                                : null}
+                            <Text numberOfLines={1} style={[styles.rightSubtitle, rightSubtitleStyle]}>
+                                {rightSubtitle}
+                            </Text>
                         </View>
                     </View>
-                    <View style={styles.rightContainer}>
-                        {rightIcon ?
-                            <Icon
-                                name={rightIcon.name}
-                                size={rightIcon.size || 30}
-                                color={rightIcon.color || 'black'}
-                            >
-                            </Icon>
-                            : null}
-                        <Text numberOfLines={1} style={[styles.rightSubtitle, rightSubtitleStyle]}>
-                            {rightSubtitle}
-                        </Text>
-                    </View>
                 </View>
-            </View>
+            </ComponentBackground>
         </Component>
 
     )

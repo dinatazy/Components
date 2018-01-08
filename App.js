@@ -27,7 +27,7 @@ export default class App extends Component<{}> {
       <View style={styles.container}>
         <ListItem
           title='Dummy Title'
-          titleStyle={{ color: 'green', fontWeight: 'normal' }}
+          titleStyle={{ fontWeight: 'normal' }}
           subtitle='Arbeitsplatz'
           subtitleStyle={{}}
           leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
@@ -38,13 +38,15 @@ export default class App extends Component<{}> {
         />
         <ListItem
           title='Dummy Title'
-          titleStyle={{ color: 'green', fontWeight: 'normal' }}
+          titleStyle={{ color: 'white', fontWeight: 'bold' }}
           subtitle='Arbeitsplatz'
-          subtitleStyle={{}}
+          subtitleStyle={{ color: 'white' }}
           //leftImage={{ uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' }}
-          rightIcon={{ name: 'angle-right', color: 'black', size: 25, type: 'font-awesome' }}
+          rightIcon={{ name: 'star-o', color: 'white', size: 30, type: 'font-awesome' }}
           //rightSubtitle='10 November'
-          rightSubtitleStyle={{}}
+          rightSubtitleStyle={{ color: 'white' }}
+          backgroundImage={{ uri: 'https://static.pexels.com/photos/531880/pexels-photo-531880.jpeg' }}
+          backgroundImageStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
           onPress={() => console.log('im clicked')}
         />
 
