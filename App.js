@@ -28,6 +28,7 @@ const list = [
     onPress: () => { console.log('first item') }
   },
   {
+    containerStyle: { height: 100 },
     title: 'Dummy Title',
     titleStyle: { color: 'blue', fontWeight: 'normal' },
     subtitle: 'Arbeitsplatz subtitle texting long',
@@ -57,7 +58,7 @@ const list = [
     rightSubtitleStyle: {},
   },
   {
-    containerStyle: {},
+    containerStyle: { height: 100 },
     title: 'Dummy Title',
     titleStyle: { color: 'white', fontWeight: 'bold' },
     subtitle: 'Arbeitsplatz',
@@ -68,7 +69,7 @@ const list = [
     onPress: () => { console.log('first item') }
   },
   {
-    containerStyle: {},
+    containerStyle: { height: 100 },
     title: 'Dummy Title',
     titleStyle: { color: 'white', fontWeight: 'bold' },
     subtitle: 'Arbeitsplatz',
@@ -93,6 +94,7 @@ export default class App extends Component<{}> {
   _renderItem = ({ item }) => (
 
     <ListItem
+      containerStyle={item.containerStyle}
       title={item.title}
       titleStyle={item.titleStyle}
       subtitle={item.subtitle}

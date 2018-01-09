@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     imageBackground: {
         width: width,
         height: 70,
+        justifyContent: 'center',
     },
 
     imageBackgroundMask: {

@@ -45,16 +45,16 @@ const ListItem = props => {
     return (
 
         <Component
-            style={[styles.container, containerStyle]}
+            style={[styles.container]}
             onPress={onPress}
             {...attributes}
         >
             <ComponentBackground
-                style={[styles.imageBackground, backgroundImageStyle]}
+                style={[styles.imageBackground, backgroundImageStyle, containerStyle]}
                 source={backgroundImage}
             >
                 <View
-                    style={[styles.imageBackground, isBackgroundMask ? styles.imageBackgroundMask : null]}
+                    style={[styles.imageBackground, containerStyle, isBackgroundMask ? styles.imageBackgroundMask : null]}
                 >
                     <View style={styles.leftImageContainer}>
                         <View style={styles.content}>
