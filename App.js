@@ -13,7 +13,7 @@ import {
   FlatList,
 } from 'react-native';
 
-import ListItem from './src/component/listItem'
+import ListItem from './src/component/listItem/listItem'
 
 const list = [
   {

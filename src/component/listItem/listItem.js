@@ -9,7 +9,7 @@ import {
     ImageBackground
 } from 'react-native'
 import { styles } from './style'
-import getIconType from '../helpers/getIconType';
+import getIconType from '../../helpers/getIconType';
 
 
 const ListItem = props => {
