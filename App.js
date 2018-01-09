@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import ListItem from './src/component/listItem/listItem'
+import CalendarItem from './src/component/calendar/calendar'
 
 const list = [
   {
@@ -112,12 +113,13 @@ export default class App extends Component<{}> {
 
   render() {
     return (
-      <FlatList
-        data={list}
-        renderItem={this._renderItem}
-        extraData={this.state}
-        contentContainerStyle={styles.container}
-      />
+      /*       <FlatList
+              data={list}
+              renderItem={this._renderItem}
+              extraData={this.state}
+              contentContainerStyle={styles.container}
+            /> */
+      <CalendarItem />
     );
   }
 }
