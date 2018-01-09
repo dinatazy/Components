@@ -14,6 +14,7 @@ import getIconType from '../helpers/getIconType';
 
 const ListItem = props => {
     const {
+        containerStyle,
         leftImage,
         title,
         subtitle,
@@ -44,7 +45,7 @@ const ListItem = props => {
     return (
 
         <Component
-            style={styles.container}
+            style={[styles.container, containerStyle]}
             onPress={onPress}
             {...attributes}
         >

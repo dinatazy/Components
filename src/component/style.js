@@ -9,10 +9,8 @@ let { width, height } = Dimensions.get('window')
 export const styles = StyleSheet.create({
     container: {
         width: width,
-        height: 70,
         borderBottomWidth: 0.3,
         borderColor: 'grey',
-        paddingBottom: 5,
     },
 
     imageBackground: {
@@ -35,14 +33,14 @@ export const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         marginLeft: 10,
-        alignItems:'center'
+        alignItems: 'center'
     },
 
     leftImage: {
         width: 45,
         height: 45,
         borderRadius: 2,
-        marginTop:5,
+        marginTop: 5,
     },
 
     titleContainer: {
