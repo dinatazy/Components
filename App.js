@@ -18,7 +18,7 @@ import ListItem from './src/component/listItem'
 const list = [
   {
     title: 'Dummy Title',
-    titleStyle: { fontWeight: 'normal' },
+    titleStyle: { fontWeight: 'bold' },
     subtitle: 'Arbeitsplatz',
     subtitleStyle: {},
     leftImage: { uri: 'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg' },
@@ -29,12 +29,34 @@ const list = [
   },
   {
     title: 'Dummy Title',
+    titleStyle: { color:'blue', fontWeight: 'normal' },
+    subtitle: 'Arbeitsplatz subtitle texting long',
+    subtitleStyle: {color:'black'},
+    leftImage: { uri: 'https://i.pinimg.com/736x/d7/c2/59/d7c2593939551cdc026767eaa789be63--case-closed-magic-kaito.jpg' },
+    rightIcon: { name: 'angle-right', color: 'blue', type: 'font-awesome' },
+    rightSubtitle: '10 November 2018',
+    rightSubtitleStyle: {color:'black'},
+    onPress: () => { console.log('first item') }
+  },
+  {
+    title: 'Its a Very Very Long Dummy Title ',
+    titleStyle: { fontWeight: 'normal' },
+    subtitle: 'Arbeitsplatz',
+    subtitleStyle: {},
+    leftImage: { uri: 'https://i.pinimg.com/736x/5d/8e/62/5d8e62c46449981ea92a454ff61c9c02--smile-fary.jpg' },
+    rightIcon: { name: 'angle-right', color: 'black', type: 'font-awesome' },
+    //rightSubtitle: '10 November',
+    rightSubtitleStyle: {},
+  },
+  {
+    title: 'Dummy Title',
     titleStyle: { color: 'white', fontWeight: 'bold' },
     subtitle: 'Arbeitsplatz',
     subtitleStyle: { color: 'white' },
     rightIcon: { name: 'star-o', color: 'white', size: 35, type: 'font-awesome' },
     backgroundImage: { uri: 'https://static.pexels.com/photos/531880/pexels-photo-531880.jpeg' },
     isBackgroundMask: true,
+    onPress: () => { console.log('first item') }
   },
 
 ]
@@ -60,6 +82,7 @@ export default class App extends Component<{}> {
       rightSubtitle={item.rightSubtitle}
       rightSubtitleStyle={item.rightSubtitleStyle}
       backgroundImage={item.backgroundImage}
+      isBackgroundMask={item.isBackgroundMask}
       onPress={item.onPress}
     />
 
@@ -83,6 +106,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginTop: 60,
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
   },
 });

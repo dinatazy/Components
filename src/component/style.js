@@ -28,20 +28,21 @@ export const styles = StyleSheet.create({
     content: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
     },
 
     leftContainer: {
         flex: 1,
         flexDirection: 'row',
         marginLeft: 10,
+        alignItems:'center'
     },
 
     leftImage: {
-        width: 52,
-        height: 52,
+        width: 45,
+        height: 45,
         borderRadius: 2,
-        alignSelf: 'center'
+        marginTop:5,
     },
 
     titleContainer: {
@@ -65,13 +66,11 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         color: 'grey',
         width: 190,
-        paddingTop: 5,
     },
 
     rightContainer: {
-        margin: 10,
+        padding: 10,
         alignItems: 'flex-end',
-        justifyContent: 'flex-end',
     },
 
     rightSubtitle: {
