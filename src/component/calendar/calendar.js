@@ -10,70 +10,52 @@ import {
 } from 'react-native'
 import { styles } from './style'
 import { Calendar } from 'react-native-calendars';
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { LocaleConfig } from 'react-native-calendars';
 
-const CalendarItem = props => {
-    /*     const {
-    
-        } = props; */
 
-    return (
-        <Calendar
-            style={styles.calendar}
-/*             dayComponent={({ date, state, marking }) => {
-                console.log('my marking', marking)
-                return (<View style={{ flex: 1 }}><Text style={{ textAlign: 'center', color: state === 'disabled' ? 'gray' : 'black' }}>{date.day}</Text></View>);
-            }} */
-            // Initially visible month. Default = Date()
-            current={Date()}
-            // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-            minDate={'2012-05-10'}
-            // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-            maxDate={'2012-05-30'}
-            // Handler which gets executed on day press. Default = undefined
-            onDayPress={(day) => { console.log('selected day', day) }}
-            // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-            monthFormat={'yyyy MMMM'}
-            // Handler which gets executed when visible month changes in calendar. Default = undefined
-            onMonthChange={(month) => { console.log('month changed', month) }}
-            // Hide month navigation arrows. Default = false
-            // Replace default arrows with custom ones (direction can be 'left' or 'right')
-            // renderArrow={(direction) => (<Arrow />)}
-            // Do not show days of other months in month page. Default = false
-            //hideExtraDays={true}
-            // If hideArrows=false and hideExtraDays=false do not switch month when tapping on greyed out
-            // day from another month that is visible in calendar page. Default = false
-            //disableMonthChange={true}
-            // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
-            firstDay={1}
-
-/*             markedDates={{
-                '2018-01-08': { selected: true, color: 'blue', marked: true },
-            }} */
-            markingType={'simple'}
-            // Hide day names. Default = false
-            hideDayNames={false}
-            // Show week numbers to the left. Default = false
-            showWeekNumbers={false}
-
-            theme={{
-                backgroundColor: '#ffffff',
-                calendarBackground: '#ffffff',
-                textSectionTitleColor: 'black',
-                selectedDayBackgroundColor: 'black',
-                selectedDayTextColor: 'black',
-                todayTextColor: 'black',
-                dayTextColor: 'black',
-                textDisabledColor: 'black',
-                dotColor: 'black',
-                selectedDotColor: 'black',
-                arrowColor: 'orange',
-                monthTextColor: 'blue',
-                textDayFontSize: 16,
-                textMonthFontSize: 16,
-                textDayHeaderFontSize: 16
-            }}
-        />
-
-    )
+LocaleConfig.locales['de'] = {
+    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul.', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    dayNamesShort: ['M', 'D', 'M', 'D', 'F', 'S', 'S']
 };
-export default CalendarItem;
+
+LocaleConfig.defaultLocale = 'de';
+
+export default class CalendarItem extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    render() {
+        return (
+            <Calendar
+                onDayPress={this.onDayPress}
+                style={styles.calendar}
+                markedDates={{ [this.state.selected]: { selected: true } }}
+                theme={{
+                    arrowColor: 'red',
+                    todayTextColor: 'red',
+                }}
+                monthFormat={'MMMM'}
+                renderArrow={(direction) => (
+                    direction == 'left' ?
+                        <Icon name='angle-left' size={40} color='red' />
+                        :
+                        <Icon name='angle-right' size={40} color='red' />
+                )}
+                hideArrows={false}
+                hideExtraDays={false}
+                markedDates={{
+                    '2018-05-23': { selected: true, marked: true },
+                    '2018-05-24': { selected: true, marked: true, dotColor: 'green' },
+                    '2018-05-25': { marked: true, dotColor: 'red' },
+                    '2018-05-26': { marked: true },
+                }}
+            />
+        )
+    }
+};
