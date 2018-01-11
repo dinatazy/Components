@@ -30,6 +30,15 @@ export default class CalendarItem extends Component {
         this.state = {};
     }
 
+    renderMarkedDate() {
+        let { markedDates } = this.props;
+        let myReturnedMarkedDates = {};
+        for (markedDate of markedDates) {
+            myReturnedMarkedDates[markedDate] = { textColor: 'red' }
+        }
+        return myReturnedMarkedDates;
+    }
+
     render() {
         return (
             <Calendar
@@ -49,12 +58,9 @@ export default class CalendarItem extends Component {
                 )}
                 hideArrows={false}
                 hideExtraDays={false}
-                markedDates={{
-                    '2018-01-15': { color: 'red', textColor: 'red'},
-                    '2018-01-16': { color: 'red', textColor: 'red'},
-                    '2018-01-17': { color: 'red', textColor: 'red'},
-                    '2018-01-18': { color: 'red', textColor: 'red'},
-                }}
+                markedDates={
+                    this.renderMarkedDate()
+                }
             />
         )
     }

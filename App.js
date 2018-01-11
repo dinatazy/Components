@@ -83,6 +83,13 @@ const list = [
 
 ]
 
+const markedDates = [
+  '2018-01-15',
+  '2018-01-16',
+  '2018-01-17',
+  '2018-01-18'
+]
+
 export default class App extends Component<{}> {
 
   constructor(props, context) {
@@ -120,7 +127,9 @@ export default class App extends Component<{}> {
               contentContainerStyle={styles.container}
             /> */
       <View style={styles.container}>
-        <CalendarItem />
+        <CalendarItem
+          markedDates={markedDates}
+        />
       </View>
     );
   }
