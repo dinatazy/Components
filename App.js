@@ -119,17 +119,17 @@ export default class App extends Component<{}> {
               extraData={this.state}
               contentContainerStyle={styles.container}
             /> */
-      <CalendarItem />
+      <View style={styles.container}>
+        <CalendarItem />
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'flex-start',
     marginTop: 60,
-    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#FFFFFF',
   },
 });

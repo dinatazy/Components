@@ -38,7 +38,7 @@ export default class CalendarItem extends Component {
                 markedDates={{ [this.state.selected]: { selected: true } }}
                 theme={{
                     arrowColor: 'red',
-                    todayTextColor: 'black',
+                    todayTextColor: 'white',
                 }}
                 monthFormat={'MMMM'}
                 renderArrow={(direction) => (
