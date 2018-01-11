@@ -38,7 +38,7 @@ export default class CalendarItem extends Component {
                 markedDates={{ [this.state.selected]: { selected: true } }}
                 theme={{
                     arrowColor: 'red',
-                    todayTextColor: 'red',
+                    todayTextColor: 'black',
                 }}
                 monthFormat={'MMMM'}
                 renderArrow={(direction) => (
@@ -50,10 +50,10 @@ export default class CalendarItem extends Component {
                 hideArrows={false}
                 hideExtraDays={false}
                 markedDates={{
-                    '2018-05-23': { selected: true, marked: true },
-                    '2018-05-24': { selected: true, marked: true, dotColor: 'green' },
-                    '2018-05-25': { marked: true, dotColor: 'red' },
-                    '2018-05-26': { marked: true },
+                    '2018-01-15': { color: 'red', textColor: 'red'},
+                    '2018-01-16': { color: 'red', textColor: 'red'},
+                    '2018-01-17': { color: 'red', textColor: 'red'},
+                    '2018-01-18': { color: 'red', textColor: 'red'},
                 }}
             />
         )
