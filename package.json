@@ -11,7 +11,8 @@
     "react-native": "0.51.0",
     "react-native-calendars": "git+https://github.com/dinatazy/react-native-calendars.git",
     "react-native-elements": "^0.18.5",
-    "react-native-vector-icons": "^4.4.3"
+    "react-native-vector-icons": "^4.4.3",
+    "react-navigation": "^1.0.0-beta.26"
   },
   "devDependencies": {
     "babel-jest": "22.0.4",

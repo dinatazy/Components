@@ -15,6 +15,8 @@ import {
 
 import ListItem from './src/component/listItem/listItem'
 import CalendarItem from './src/component/calendar/calendar'
+import ListScreen from './src/screen/listScreen'
+import CalendarScreen from './src/screen/calendarScreen'
 
 const list = [
   {
@@ -90,6 +92,17 @@ const markedDates = [
   '2018-01-18'
 ]
 
+import { TabNavigator } from 'react-navigation';
+
+const RootTabs = TabNavigator({
+  List: {
+    screen: ListScreen,
+  },
+  Calendar: {
+    screen: CalendarScreen,
+  },
+});
+
 export default class App extends Component<{}> {
 
   constructor(props, context) {
@@ -99,46 +112,10 @@ export default class App extends Component<{}> {
     }
   }
 
-  _renderItem = ({ item }) => (
-
-    <ListItem
-      containerStyle={item.containerStyle}
-      title={item.title}
-      titleStyle={item.titleStyle}
-      subtitle={item.subtitle}
-      subtitleStyle={item.subtitleStyle}
-      leftImage={item.leftImage}
-      rightIcon={item.rightIcon}
-      rightSubtitle={item.rightSubtitle}
-      rightSubtitleStyle={item.rightSubtitleStyle}
-      backgroundImage={item.backgroundImage}
-      isBackgroundMask={item.isBackgroundMask}
-      onPress={item.onPress}
-    />
-
-  );
-
   render() {
     return (
-      /*       <FlatList
-              data={list}
-              renderItem={this._renderItem}
-              extraData={this.state}
-              contentContainerStyle={styles.container}
-            /> */
-      <View style={styles.container}>
-        <CalendarItem
-          markedDates={markedDates}
-        />
-      </View>
+      <RootTabs />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 60,
-    justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
-  },
-});
