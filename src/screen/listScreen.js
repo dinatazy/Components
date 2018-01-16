@@ -125,6 +125,22 @@ const list = [
         ],
         title: 'Regular List Background Image',
     },
+    {
+
+        data: [
+            {
+                containerStyle: { height: 100 },
+                title: 'Dummy Title',
+                titleStyle: { color: 'white', fontWeight: 'bold' },
+                subtitle: 'Arbeitsplatz',
+                subtitleStyle: { color: 'white' },
+                rightIcon: { name: 'angle-right', color: 'white', size: 35, type: 'font-awesome' },
+                backgroundImage: { uri: 'https://static.pexels.com/photos/531880/pexels-photo-531880.jpeg' },
+                onPress: () => { console.log('first item') }
+            },
+        ],
+        title: 'Regular List Background Image no mask',
+    },
 ]
 
 export default class ListScreen extends Component<{}> {
@@ -134,7 +150,7 @@ export default class ListScreen extends Component<{}> {
         tabBarOptions: {
             activeTintColor: '#e91e63',
             labelStyle: {
-                fontSize: 18,
+              fontSize: 12,
             }
         }
     };

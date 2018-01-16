@@ -26,7 +26,14 @@ const RootTabs = TabNavigator({
   Calendar: {
     screen: CalendarScreen,
   },
-});
+}, {
+    tabBarOptions: {
+      activeTintColor: '#e91e63',
+      labelStyle: {
+        fontSize: 15,
+      }
+    },
+  });
 
 export default class App extends Component<{}> {
 
